@@ -1,0 +1,22 @@
+﻿<div class="jumbotron" data-ng-hide="authentication.isAuth">
+    <div class="container text-center">
+        <div class="page-header text-center">
+            <h1>Polarkeeper</h1>
+        </div>
+        <p class="text-center">Sync your Polar Personal Trainer with Runkeeper!</p>
+        <p class="text-primary">Use the button below to login to your Polarkeeper and start syncing!</p>
+        <p><a class="btn btn-info" href="#/login" role="button">Login &raquo;</a>
+        </p>
+    </div>
+</div>
+
+<div class="jumbotron" data-ng-show="authentication.isAuth">
+    <div class="container text-center">
+        <div class="page-header text-center">
+            <h1>Polarkeeper</h1>
+        </div>
+        <p>You have succesfully connected your Polar Personal Trainer to Runkeeper!</p>
+        <p>Start synchronizing your Polar activities to Runkeeper by clicking on the sync-tab.</p>
+    </div>
+</div>
+

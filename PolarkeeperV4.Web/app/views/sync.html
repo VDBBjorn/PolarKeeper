@@ -1,0 +1,60 @@
+﻿<div class="container" data-ng-if="isBusy">
+    <div class='triangles'>
+        <div class='tri invert'></div>
+        <div class='tri invert'></div>
+        <div class='tri'></div>
+        <div class='tri invert'></div>
+        <div class='tri invert'></div>
+        <div class='tri'></div>
+        <div class='tri invert'></div>
+        <div class='tri'></div>
+        <div class='tri invert'></div>
+    </div>
+</div>
+<div class="container" data-ng-if="!isBusy">
+    <!--<div class="jumbotron">
+        jumbo
+    </div>-->
+    <div class="row">
+        <div class="jumbotron text-center" style="padding-top: 30px;padding-bottom: 30px;margin-bottom: 0px;" ng-if="error==''">
+            This is an overview of the activities you completed in the last 6 months. Upload any activity by clicking the upload button!
+        </div>
+        <div class="col-lg-4 col-md-4" ng-repeat="(exindex, ex) in exercises | orderBy:'-time'" ng-if="error==''">
+
+            <div class="weather-2">
+                <div class="weather-2-header">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-6">
+                            <p style="padding-top: 3px">
+                                <strong>{{ex.sport}}</strong>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 goright">
+                            <p style="padding-top: 3px">{{ex.time | date:'dd/MM/yyyy'}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /weather-2 header -->
+                <div class="row data">
+                    <div class="col-sm-6 col-xs-6 goleft">
+                        <h4><i class="fa fa-flag-checkered"></i> <b>{{ex.distance/1000}} </b>km</h4>
+                        <h6><i class="fa fa-heart"></i> max {{ex.heartRate.maximum}} BPM</h6>
+                        <h6><i class="fa fa-heart"></i> avg {{ex.heartRate.average}} BPM</h6>
+                        <h6><i class="fa fa-fire"></i> {{ex.calories}} kCal</h6>
+                    </div>
+                    <div class="col-sm-6 col-xs-6 goright nopadding">
+                        <h4><i class="fa fa-clock-o"></i> {{ex.duration | format_time_polar}}</h4>
+                        <h4>&nbsp;</h4>
+                        <button class="btn btn-sm btn-primary" data-ng-if="!ex.uploaded" ng-click="addActivity(exindex)"><i class="fa fa-cloud-upload "></i> Upload</button>
+                        <i class="fa fa-check-circle fa-2x" style="color: green; padding-top: 7px;" data-ng-if="ex.uploaded"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron" ng-if="error!=''">
+            <h2>Oops! {{ error }}</h2>
+            <p>If this problem persists, feel free to contact me on <a href="mailto:bjorn@polarkeeper.me">bjorn@polarkeeper.me</a>. Please note that we're limiting exercises to the last 6 months.
+            </p>
+        </div>
+    </div>
+</div>

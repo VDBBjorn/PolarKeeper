@@ -1,0 +1,39 @@
+﻿<div class="row" data-ng-if="registerData.provider!==''">
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+    <div class="col-md-8">
+        <h3>Associate your {{registerData.provider}} Account</h3>
+        <hr />
+        <p class="text-success">You have successfully authenticated with <strong>{{registerData.provider}} </strong>. <br/>
+        Please enter a user name for Polarkeeper and validate your credentials for <strong>Polar Personal Trainer</strong> below. <br/>
+        Click the Register button to log in.</p>
+        <div class="row">
+            <div class="col-md-3">
+                &nbsp;
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" data-ng-model="registerData.userName" required autofocus>
+                    <input type="email" class="form-control" placeholder="Email" data-ng-model="registerData.email" required/>
+                    <input type="password" class="form-control" placeholder="Password" data-ng-model="registerData.password" required/>
+                    <button class="btn btn-sm btn-info btn-block" type="button" style="margin-top:10px;" data-ng-click="registerExternal()">Register</button>
+                </div>
+                <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                    {{message}}
+                </div>
+            </div>
+            <div class="col-md-3">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+</div>
+<div class="row" data-ng-if="registerData.provider===''">
+    <div class="row">
+        <h2 class="text-center">Oops! Something went wrong, please try again!</h2>
+    </div>
+</div>

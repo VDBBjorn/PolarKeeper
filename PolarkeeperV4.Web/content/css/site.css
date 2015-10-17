@@ -1,0 +1,345 @@
+﻿/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.text-muted {
+    margin: 20px 0;
+}
+
+.form-login {
+    max-width: 330px;
+    padding: 0px 15px 5px 15px;
+    margin: 0 auto;
+}
+
+    .form-login .form-login-heading {
+        margin-bottom: 10px;
+    }
+
+    .form-login .form-control {
+        position: relative;
+        height: auto;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+        .form-login .form-control:focus {
+            z-index: 2;
+        }
+
+    .form-login input[type="password"] {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+@-webkit-keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    16.666% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    16.666% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    16.666% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+body {
+    background: #e4e4e5;
+}
+
+.triangles {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 81px;
+    width: 90px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.tri {
+    position: absolute;
+    -webkit-animation: pulse 750ms ease-in infinite;
+    -moz-animation: pulse 750ms ease-in infinite;
+    animation: pulse 750ms ease-in infinite;
+    border-top: 27px solid #215A6D;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 0px;
+}
+
+    .tri.invert {
+        border-top: 0px;
+        border-bottom: 27px solid #215A6D;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+    }
+
+    .tri:nth-child(1) {
+        left: 30px;
+    }
+
+    .tri:nth-child(2) {
+        left: 15px;
+        top: 27px;
+        -webkit-animation-delay: -125ms;
+        -moz-animation-delay: -125ms;
+        animation-delay: -125ms;
+    }
+
+    .tri:nth-child(3) {
+        left: 30px;
+        top: 27px;
+    }
+
+    .tri:nth-child(4) {
+        left: 45px;
+        top: 27px;
+        -webkit-animation-delay: -625ms;
+        -moz-animation-delay: -625ms;
+        animation-delay: -625ms;
+    }
+
+    .tri:nth-child(5) {
+        top: 54px;
+        -webkit-animation-delay: -250ms;
+        -moz-animation-delay: -250ms;
+        animation-delay: -250ms;
+    }
+
+    .tri:nth-child(6) {
+        top: 54px;
+        left: 15px;
+        -webkit-animation-delay: -250ms;
+        -moz-animation-delay: -250ms;
+        animation-delay: -250ms;
+    }
+
+    .tri:nth-child(7) {
+        top: 54px;
+        left: 30px;
+        -webkit-animation-delay: -375ms;
+        -moz-animation-delay: -375ms;
+        animation-delay: -375ms;
+    }
+
+    .tri:nth-child(8) {
+        top: 54px;
+        left: 45px;
+        -webkit-animation-delay: -500ms;
+        -moz-animation-delay: -500ms;
+        animation-delay: -500ms;
+    }
+
+    .tri:nth-child(9) {
+        top: 54px;
+        left: 60px;
+        -webkit-animation-delay: -500ms;
+        -moz-animation-delay: -500ms;
+        animation-delay: -500ms;
+    }
+
+/* ANIMATIONS
+============================================================================= */
+
+/* leaving animations ----------------------------------------- */
+/* rotate and fall */
+@keyframes rotateFall {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+        animation-timing-function: ease-out;
+    }
+
+    40% {
+        transform: rotateZ(17deg);
+    }
+
+    60% {
+        transform: rotateZ(16deg);
+    }
+
+    100% {
+        transform: translateY(100%) rotateZ(17deg);
+    }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* rotate out newspaper */
+@keyframes rotateOutNewspaper {
+    to {
+        transform: translateZ(-3000px) rotateZ(360deg);
+        opacity: 0;
+    }
+}
+
+/* entering animations --------------------------------------- */
+/* scale up */
+@keyframes scaleUp {
+    from {
+        opacity: 0.3;
+        -webkit-transform: scale(0.8);
+    }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+.ng-enter {
+    -webkit-animation: slideInRight 0.5s both ease-in;
+    -moz-animation: slideInRight 0.5s both ease-in;
+    -ms-animation: slideInRight 0.5s both ease-in;
+    -o-animation: slideInRight 0.5s both ease-in;
+    animation: slideInRight 0.5s both ease-in;
+}
+
+.ng-leave {
+    -webkit-animation: slideOutLeft 0.5s both ease-in;
+    -moz-animation: slideOutLeft 0.5s both ease-in;
+    -ms-animation: slideOutLeft 0.5s both ease-in;
+    -o-animation: slideOutLeft 0.5s both ease-in;
+    animation: slideOutLeft 0.5s both ease-in;
+}
+
+.weather-2 {
+    background: #e9f0f4;
+    margin-top: 20px;
+}
+
+    .weather-2 .weather-2-header {
+        background: #215A6D;
+        padding-top: 5px;
+        margin-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+        .weather-2 .weather-2-header p {
+            color: white;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+            .weather-2 .weather-2-header p small {
+                font-size: 10px;
+            }
+
+    .weather-2 .data {
+        margin-right: 10px;
+        margin-left: 10px;
+        color: #272b34;
+    }
+
+        .weather-2 .data h5 {
+            margin-top: 0px;
+            font-weight: lighter;
+        }
+
+        .weather-2 .data h1 {
+            margin-top: 2px;
+        }
+
+.centered {
+    text-align: center;
+}
+
+.goleft {
+    text-align: left;
+}
+
+.goright {
+    text-align: right;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
